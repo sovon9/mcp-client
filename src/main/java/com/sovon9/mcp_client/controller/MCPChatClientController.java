@@ -3,7 +3,7 @@ package com.sovon9.mcp_client.controller;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.tool.ToolCallbackProvider;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +20,7 @@ public class MCPChatClientController {
                 .build();
     }
 
-    @GetMapping("/chat")
+    @PostMapping("/chat")
     public String chatMessage(@RequestBody String message)
     {
         return chatClient.prompt()
